@@ -1,11 +1,7 @@
 package com.examples;
 
-import java.util.Comparator;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
-import com.examples.pojo.Person;
-import static com.examples.utils.Utils.*;
+import static com.examples.utils.Utils.getRandomPersons;
+import static com.examples.utils.Utils.outputSeparator;
 
 public class StreamExamples {
 	

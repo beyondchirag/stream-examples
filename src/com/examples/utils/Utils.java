@@ -14,24 +14,22 @@ public class Utils {
 		 return IntStream.rangeClosed(1, noOfPersons).parallel().mapToObj(i -> {return new Person("fName_"+i,"lName_"+i,random5DigitPhoneNumber(),i);}).collect(Collectors.toList());
 	}
 
+	private static String random5DigitPhoneNumber() {
+		Random ran = new Random();
+		return ran.nextInt(100000)+"";	
+	}
+	
 	public static List<Person> getPersons() {
-
-		List<Person> persons = new ArrayList<Person>();
-		
+		List<Person> persons = new ArrayList<Person>();	
 		persons.add(new Person("First0","Last0","123-456-7890",1));
 		persons.add(new Person("First0","Last1","123-456-7891",2));
 		persons.add(new Person("First0","Last2","123-456-7891",2));
 		persons.add(new Person("First1","Last0","123-456-7890",3));
 		persons.add(new Person("First1","Last1","123-456-7891",3));
 		persons.add(new Person("First1","Last2","123-456-7891",3));
+		persons.add(new Person("First2","Last2","123-456-7891",4));
+		persons.add(new Person("First2","Last2","123-456-7891",5));
 		return persons;
-		
-	}
-	
-	
-	private static String random5DigitPhoneNumber() {
-		Random ran = new Random();
-		return ran.nextInt(100000)+"";
 		
 	}
 	

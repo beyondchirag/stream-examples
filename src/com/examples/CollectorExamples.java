@@ -1,8 +1,12 @@
 package com.examples;
 
+import static com.examples.utils.Utils.getPersons;
 import static com.examples.utils.Utils.getRandomPersons;
 import static com.examples.utils.Utils.outputSeparator;
 
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -22,6 +26,20 @@ public class CollectorExamples {
 			.filter(person -> person.getAge()%2==0)
 			.collect(Collectors.toMap(Person::getFirstName, Function.identity())));
 		outputSeparator();
+		
+		
+//		Collect and filter List as TreeMap - 		
+		System.out.println(getPersons()
+	            .stream()
+	            .collect(Collectors.groupingBy(Person::getAge,TreeMap::new, Collectors.toList())));
+		outputSeparator();
+		
+//		Collect and filter List as TreeMap - 		
+		System.out.println(getPersons()
+	            .stream()
+	            .collect(Collectors.groupingBy(Person::getFirstName,() -> new LinkedHashMap(), Collectors.counting())));
+		outputSeparator();
+		
 	}
 
 }
