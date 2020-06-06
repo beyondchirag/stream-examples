@@ -34,7 +34,7 @@ public class CollectorExamples {
 	            .collect(Collectors.groupingBy(Person::getAge,TreeMap::new, Collectors.toList())));
 		outputSeparator();
 		
-//		Collect and filter List as TreeMap - 		
+//		Collect and filter List as LinkedHashMap - with list size 		
 		System.out.println(getPersons()
 	            .stream()
 	            .collect(Collectors.groupingBy(Person::getFirstName,() -> new LinkedHashMap(), Collectors.counting())));
