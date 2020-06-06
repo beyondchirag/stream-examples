@@ -73,5 +73,12 @@ public class StreamExamples {
 				.stream()
 				.collect(Collectors.groupingBy(Person::getFirstName, Collectors.counting())));
 		printSeparatorLine();
+		
+		
+//		Groups Person based on firstname - and then age> output Map<Firstname, Map<age, person>>
+		System.out.println(PersonData.getPersons()
+				.stream()
+				.collect(Collectors.groupingBy(Person::getFirstName, Collectors.groupingBy(Person::getAge))));
+		printSeparatorLine();
 	}
 }
